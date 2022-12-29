@@ -90,4 +90,4 @@ end
 => 560
 
 # The Call Stack
-- call stack helos ruby keep track of what method is executing as well as where execution should resume when it returns
+- call stack helps ruby keep track of what method is executing as well as where execution should resume when it returns
