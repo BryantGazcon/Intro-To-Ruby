@@ -38,3 +38,40 @@ puts "Done!"
 - Unlike loop methid WHILE is not a method meaning that variables can be initialized inside the WHILE loop and be called from the outside
 
 # Until Loops
+- until loop is opposite of while loop
+
+x = gets.chomp.to_i
+
+until x < 0
+  puts x
+  x -= 1
+end
+
+puts "Done!"
+
+- as with while loops, until is not a method therefore, they do not have their own scope
+
+
+# Do/While Loops
+- in "do/while" loops the conditional check is place at the end of the loop as opposed to the beginning
+- we have to use loop and break to emulate the behavior of a do/while loop
+## perform_again.rb
+
+loop do
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+  if answer != 'Y'
+    break
+  end
+end
+- this function will only repeat the question once, if user types anything other than Y, then it will break, if users types Y then question will be asked again etc
+
+# For Loops
+- for loops are used to loop over a collection of elements.
+- for loops have a definite end since its looping over a finite number of elements
+- begins with for, followed by a variable then in and then a collection of elements
+- as with WHILE and UNTIL loops, for is not implemented as a method, therefore a for loop does not have its own scope
+
+Conditionals Within Loops
+- if you place NEXT reserved word in a loop it will jump from that line to the next loop iteration without executing the code beneath it
+- if you place BREAK reserved word in loop it will exit the loop immediately without executing any code in the loop
