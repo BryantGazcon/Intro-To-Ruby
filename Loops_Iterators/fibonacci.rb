@@ -6,4 +6,4 @@ def fibonacci(num)
   end
 end
 
-puts fibonacci(6)
+puts fibonacci(2)

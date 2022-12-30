@@ -72,6 +72,28 @@ end
 - begins with for, followed by a variable then in and then a collection of elements
 - as with WHILE and UNTIL loops, for is not implemented as a method, therefore a for loop does not have its own scope
 
-Conditionals Within Loops
+# Conditionals Within Loops
 - if you place NEXT reserved word in a loop it will jump from that line to the next loop iteration without executing the code beneath it
 - if you place BREAK reserved word in loop it will exit the loop immediately without executing any code in the loop
+- most rubyists where possible prefer iterators over loops
+
+# Iterators
+- iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection
+- practice_each.rb
+
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+
+names.each { |name| puts name }
+- block is just some lines of code ready to be executed
+- when working with blocks there are two styles, we use curly braces when everything can fit on one line, and the words do and end when performing multi-line operations
+
+# Recursion
+- recursion is another way to create a loop in ruby
+- recursion is the act of calling a method from within itself
+- def doubler(start)
+  puts start
+  if start < 10
+    doubler(start * 2)
+  end
+end
+- MAIN IDEA : there is some baseline condition that returns a value which then unwinds the recursive calls, think of the successive recursive calls building up, until some value is returned and only then can recursive calls be evaluated
