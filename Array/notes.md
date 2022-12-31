@@ -9,6 +9,7 @@
 
 # Things to remember
 - there are two things to take into account when working with arrays. The first thing is that some methods mutate the caller. For instance the pop method mutates the caller/object which in this case would be an array because this method is modifying the array. The second thing to take into account is methods that dont mutate the caller, in this instance methods such as select dont modify the original array, meaning that you must create a new variable and set it equal to the array.method to get the new array
+- always remember to ask yourself, " is this method returning new data, or is the original data being modified?"
 
 # Modifying Arrays
 - to take the last item off an array permanently we can use pop method
@@ -84,3 +85,73 @@ irb :005 > b.unshift(1)
 => [1, 2, 3]
 irb :006 > a == b
 => true
+
+# to_s
+- to_s method is used to create a string representation of an array
+- ruby does this behind the scence when using string interpolation to print an array to the screen
+
+irb :001 > a = [1, 2, 3]
+=> [1, 2, 3]
+irb :002 > "It's as easy as #{a}"
+=> "It's as easy as [1, 2, 3]"
+
+# Common Array Methods
+## include? 
+- method checks to see if the argument given is included in the array, will return boolean value(such methods are called predicates)
+
+irb :001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb :002 > a.include?(3)
+=> true
+irb :003 > a.include?(6)
+=> false
+
+## flatten
+- flatten method can be used to take an array that contain nested arrays and create a one dimensional array. 
+
+irb: 001 > a = [1, 2, [3, 4, 5], [6, 7]]
+=> [1, 2, [3, 4, 5], [6, 7]]
+irb: 002 > a.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
+
+## each_index
+- each_index method iterates through the array much like the each method however the variable represents the index number as opposed to the value at each index.
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_index { |i| puts "This is index #{i}" }
+This is index 0
+This is index 1
+This is index 2
+This is index 3
+This is index 4
+=> [1, 2, 3, 4, 5]
+
+## each_with_index
+- each_with_index gives us the ability to manipulate both the value and the index by passing in two parameters to the block of code. first is the value and the second is the index
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+=> [1, 2, 3, 4, 5]
+
+## sort
+- sort method is a way to return a sorted array
+- non-destructive does not modifiy original data, but instead returns new data
+
+## product
+- product method can be used to combine two arrays and return an array that is a combination of all elements from all arrays
+irb :001 > [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+
+# Each vs Map
+- each provides a simple way of iterating over a collection in Ruby and is more preferred to using the for loop
+- map also works on objects that allow for iteration
+- each and map are important methods, use EACH for iteration and MAP for transformation
+
+
+
