@@ -9,3 +9,5 @@ contacts.each do |name, hash|
 end
 
 p contacts
+
+# do again before session
