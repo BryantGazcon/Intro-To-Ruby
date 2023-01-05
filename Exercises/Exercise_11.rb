@@ -6,8 +6,7 @@ contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 
 contacts["Joe Smith"][:email] = contact_data.first.first
 contacts["Joe Smith"][:address] = contact_data.first[1]
-ontacts["Joe Smith"][:phone] = contact_data.first.last
-
+contacts["Joe Smith"][:phone] = contact_data.first.last
 contacts["Sally Johnson"][:email] = contact_data.last.first
 contacts["Sally Johnson"][:address] = contact_data.last[1]
 contacts["Sally Johnson"][:phone] = contact_data.last.last
